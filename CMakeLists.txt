@@ -58,19 +58,19 @@ option ( enable-trap-on-fpe "enable SIGFPE trap on Floating Point Exceptions" of
 option ( enable-tests "build unit tests (implicitly disables BUILD_SHARED_LIBS)" off )
 
 # Options enabled by default
-option ( enable-aufile "compile support for sound file output" on )
+option ( enable-aufile "compile support for sound file output" off )
 option ( BUILD_SHARED_LIBS "Build a shared object or DLL" on )
-option ( enable-dbus "compile DBUS support (if it is available)" on )
-option ( enable-ipv6  "enable ipv6 support" on )
-option ( enable-jack "compile JACK support (if it is available)" on )
-option ( enable-ladspa "enable LADSPA effect units" on )
-option ( enable-libsndfile "compile libsndfile support (if it is available)" on )
-option ( enable-midishare "compile MidiShare support (if it is available)" on )
-option ( enable-network "enable network support (requires BSD sockets)" on )
-option ( enable-oss "compile OSS support (if it is available)" on )
+option ( enable-dbus "compile DBUS support (if it is available)" off )
+option ( enable-ipv6  "enable ipv6 support" off )
+option ( enable-jack "compile JACK support (if it is available)" off )
+option ( enable-ladspa "enable LADSPA effect units" off )
+option ( enable-libsndfile "compile libsndfile support (if it is available)" off )
+option ( enable-midishare "compile MidiShare support (if it is available)" off )
+option ( enable-network "enable network support (requires BSD sockets)" off )
+option ( enable-oss "compile OSS support (if it is available)" off )
 option ( enable-pkgconfig "use pkg-config to locate fluidsynth's (mostly optional) dependencies" on )
-option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
-option ( enable-readline "compile readline lib line editing (if it is available)" on )
+option ( enable-pulseaudio "compile PulseAudio support (if it is available)" off )
+option ( enable-readline "compile readline lib line editing (if it is available)" off )
 
 # Platform specific options
 if ( CMAKE_SYSTEM MATCHES "Linux" )
@@ -564,7 +564,6 @@ configure_file ( ${CMAKE_SOURCE_DIR}/src/config.cmake
 
 # Process subdirectories
 add_subdirectory ( src )
-add_subdirectory ( doc )
 
 # pkg-config support
 set ( prefix "${CMAKE_INSTALL_PREFIX}" )
@@ -610,7 +609,6 @@ if ( UNIX )
         COMMAND mkdir -p ${PACKAGE}-${VERSION}
         COMMAND cp -r bindings ${PACKAGE}-${VERSION}
         COMMAND cp -r cmake_admin ${PACKAGE}-${VERSION}
-        COMMAND cp -r doc ${PACKAGE}-${VERSION}
         COMMAND cp -r include ${PACKAGE}-${VERSION}
         COMMAND cp -r src ${PACKAGE}-${VERSION}
         COMMAND cp AUTHORS ChangeLog CMakeLists.txt LICENSE ${PACKAGE}.* INSTALL NEWS README* THANKS TODO ${PACKAGE}-${VERSION}

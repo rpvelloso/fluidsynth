@@ -95,9 +95,7 @@ extern "C" {
 #include "fluidsynth/types.h"
 #include "fluidsynth/settings.h"
 #include "fluidsynth/synth.h"
-#include "fluidsynth/shell.h"
 #include "fluidsynth/sfont.h"
-#include "fluidsynth/audio.h"
 #include "fluidsynth/event.h"
 #include "fluidsynth/midi.h"
 #include "fluidsynth/seq.h"
@@ -108,7 +106,6 @@ extern "C" {
 #include "fluidsynth/gen.h"
 #include "fluidsynth/voice.h"
 #include "fluidsynth/version.h"
-#include "fluidsynth/ladspa.h"
 
 
 #ifdef __cplusplus

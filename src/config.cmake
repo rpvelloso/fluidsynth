@@ -1,26 +1,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-/* Define to enable ALSA driver */
-#cmakedefine ALSA_SUPPORT @ALSA_SUPPORT@
-
-/* Define to activate sound output to files */
-#cmakedefine AUFILE_SUPPORT @AUFILE_SUPPORT@
-
-/* whether or not we are supporting CoreAudio */
-#cmakedefine COREAUDIO_SUPPORT @COREAUDIO_SUPPORT@
-
-/* whether or not we are supporting CoreMIDI */
-#cmakedefine COREMIDI_SUPPORT @COREMIDI_SUPPORT@
-
-/* whether or not we are supporting DART */
-#cmakedefine DART_SUPPORT @DART_SUPPORT@
-
 /* Define if building for Mac OS X Darwin */
 #cmakedefine DARWIN @DARWIN@
-
-/* Define if D-Bus support is enabled */
-#cmakedefine DBUS_SUPPORT  @DBUS_SUPPORT@
 
 /* Soundfont to load automatically in some use cases */
 #cmakedefine DEFAULT_SOUNDFONT "@DEFAULT_SOUNDFONT@"
@@ -46,12 +28,6 @@
 /* Define to 1 if you have the <io.h> header file. */
 #cmakedefine HAVE_IO_H @HAVE_IO_H@
 
-/* whether or not we are supporting lash */
-#cmakedefine HAVE_LASH @HAVE_LASH@
-
-/* Define to 1 if you have the `MidiShare' library (-lMidiShare). */
-#cmakedefine HAVE_LIBMIDISHARE @HAVE_LIBMIDISHARE@
-
 /* Define to 1 if you have the `pthread' library (-lpthread). */
 #cmakedefine HAVE_LIBPTHREAD @HAVE_LIBPTHREAD@
 
@@ -66,9 +42,6 @@
 
 /* Define to 1 if you have the <memory.h> header file. */
 #cmakedefine HAVE_MEMORY_H @HAVE_MEMORY_H@
-
-/* Define to 1 if you have the <MidiShare.h> header file. */
-#cmakedefine HAVE_MIDISHARE_H @HAVE_MIDISHARE_H@
 
 /* Define to 1 if you have the <netinet/in.h> header file. */
 #cmakedefine HAVE_NETINET_IN_H @HAVE_NETINET_IN_H@
@@ -136,26 +109,11 @@
 /* Define to 1 if you have the inet_ntop() function. */
 #cmakedefine HAVE_INETNTOP @HAVE_INETNTOP@
 
-/* Define to enable JACK driver */
-#cmakedefine JACK_SUPPORT @JACK_SUPPORT@
-
-/* Include the LADSPA Fx unit */
-#cmakedefine LADSPA @LADSPA_SUPPORT@
-
 /* Define to enable IPV6 support */
 #cmakedefine IPV6_SUPPORT @IPV6_SUPPORT@
 
 /* Define to enable network support */
 #cmakedefine NETWORK_SUPPORT @NETWORK_SUPPORT@
-
-/* libsndfile has ogg vorbis support */
-#cmakedefine LIBSNDFILE_HASVORBIS @LIBSNDFILE_HASVORBIS@
-
-/* Define to enable libsndfile support */
-#cmakedefine LIBSNDFILE_SUPPORT @LIBSNDFILE_SUPPORT@
-
-/* Define to enable MidiShare driver */
-#cmakedefine MIDISHARE_SUPPORT @MIDISHARE_SUPPORT@
 
 /* Define if using the MinGW32 environment */
 #cmakedefine MINGW32 @MINGW32@
@@ -184,20 +142,8 @@
 /* Define to the version of this package. */
 #cmakedefine PACKAGE_VERSION @PACKAGE_VERSION@
 
-/* Define to enable PortAudio driver */
-#cmakedefine PORTAUDIO_SUPPORT @PORTAUDIO_SUPPORT@
-
-/* Define to enable PulseAudio driver */
-#cmakedefine PULSE_SUPPORT @PULSE_SUPPORT@
-
 /* Define to 1 if you have the ANSI C header files. */
 #cmakedefine STDC_HEADERS @STDC_HEADERS@
-
-/* Soundfont to load for unit testing */
-#cmakedefine TEST_SOUNDFONT "@TEST_SOUNDFONT@"
-
-/* SF3 Soundfont to load for unit testing */
-#cmakedefine TEST_SOUNDFONT_SF3 "@TEST_SOUNDFONT_SF3@"
 
 /* Define to enable SIGFPE assertions */
 #cmakedefine TRAP_ON_FPE @TRAP_ON_FPE@
@@ -207,9 +153,6 @@
 
 /* Define to profile the DSP code */
 #cmakedefine WITH_PROFILING @WITH_PROFILING@
-
-/* Define to use the readline library for line editing */
-#cmakedefine WITH_READLINE @WITH_READLINE@
 
 /* Define if the compiler supports VLA */ 
 #cmakedefine SUPPORTS_VLA @SUPPORTS_VLA@ 

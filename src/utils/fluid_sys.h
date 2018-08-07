@@ -42,7 +42,7 @@
 #include <gmodule.h>
 #endif
 
-#include <glib/gstdio.h>
+//#include <glib/gstdio.h>
 
 /**
  * Macro used for safely accessing a message from a GError and using a default
@@ -372,12 +372,12 @@ fluid_istream_t fluid_socket_get_istream(fluid_socket_t sock);
 fluid_ostream_t fluid_socket_get_ostream(fluid_socket_t sock);
 
 /* File access */
-#if !GLIB_CHECK_VERSION(2, 26, 0)
+//#if !GLIB_CHECK_VERSION(2, 26, 0)
 typedef struct stat fluid_stat_buf_t; /* GStatBuf has not been introduced yet */
-#else
-typedef GStatBuf fluid_stat_buf_t;
-#endif
-#define fluid_stat(_filename, _statbuf)   g_stat((_filename), (_statbuf))
+//#else
+//typedef GStatBuf fluid_stat_buf_t;
+//#endif
+#define fluid_stat(_filename, _statbuf)   stat((_filename), (_statbuf))
 
 
 /* Profiling */

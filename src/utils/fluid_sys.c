@@ -1352,7 +1352,7 @@ fluid_istream_gets(fluid_istream_t in, char *buf, int len)
 
     while(--len > 0)
     {
-#ifndef WIN32
+#if !defined(WIN32) || !defined(NETWORK_SUPPORT)
         n = read(in, &c, 1);
 
         if(n == -1)
@@ -1437,7 +1437,7 @@ fluid_ostream_printf(fluid_ostream_t out, const char *format, ...)
 
     buf[4095] = 0;
 
-#ifndef WIN32
+#if !defined(WIN32) || !defined(NETWORK_SUPPORT)
     return write(out, buf, strlen(buf));
 #else
     {
