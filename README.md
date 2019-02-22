@@ -1,7 +1,7 @@
 
 # Stripped off version of FluidSynth
 
-Removed:
+## Removed:
 	- networking;
 	- audio drivers;
 	- bindings;
@@ -10,7 +10,7 @@ Removed:
 	- documentation;
 	- Glib dependency (header fluid_glib_remover.h).
 
-Kept:
+## Kept:
 	- synth;
 	- player;
 	- SF loader.
