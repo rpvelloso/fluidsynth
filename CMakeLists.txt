@@ -137,10 +137,6 @@ check_include_file ( sys/time.h HAVE_SYS_TIME_H )
 check_include_file ( sys/stat.h HAVE_SYS_STAT_H )
 check_include_file ( sys/ioctl.h HAVE_SYS_IOCTL_H )
 check_include_file ( fcntl.h HAVE_FCNTL_H )
-check_include_file ( sys/socket.h HAVE_SYS_SOCKET_H )
-check_include_file ( netinet/in.h HAVE_NETINET_IN_H )
-check_include_file ( netinet/tcp.h HAVE_NETINET_TCP_H )
-check_include_file ( arpa/inet.h HAVE_ARPA_INET_H )
 check_include_file ( limits.h  HAVE_LIMITS_H )
 check_include_file ( pthread.h HAVE_PTHREAD_H )
 check_include_file ( signal.h HAVE_SIGNAL_H )
@@ -166,7 +162,7 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID STREQUAL "Clang" OR CMAKE_C_
   endif ( NOT APPLE AND NOT OS2 )
   
   # define some warning flags
-  set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -W -Wpointer-arith -Wno-cast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement" )
+  set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unused-function -Wno-pointer-to-int-cast -Wno-stringop-truncation -Wno-int-to-pointer-cast" )
   
   if ( CMAKE_C_COMPILER_ID STREQUAL "Intel" )
     # icc needs the restrict flag to recognize C99 restrict pointers

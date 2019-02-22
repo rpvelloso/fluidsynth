@@ -10,9 +10,6 @@
 /* Define to enable FPE checks */
 #cmakedefine FPE_CHECK @FPE_CHECK@
 
-/* Define to 1 if you have the <arpa/inet.h> header file. */
-#cmakedefine HAVE_ARPA_INET_H @HAVE_ARPA_INET_H@
-
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #cmakedefine HAVE_DLFCN_H @HAVE_DLFCN_H@
 
@@ -42,12 +39,6 @@
 
 /* Define to 1 if you have the <memory.h> header file. */
 #cmakedefine HAVE_MEMORY_H @HAVE_MEMORY_H@
-
-/* Define to 1 if you have the <netinet/in.h> header file. */
-#cmakedefine HAVE_NETINET_IN_H @HAVE_NETINET_IN_H@
-
-/* Define to 1 if you have the <netinet/tcp.h> header file. */
-#cmakedefine HAVE_NETINET_TCP_H @HAVE_NETINET_TCP_H@
 
 /* Define if compiling with openMP to enable parallel audio rendering */
 #cmakedefine HAVE_OPENMP @HAVE_OPENMP@
@@ -82,9 +73,6 @@
 /* Define to 1 if you have the <sys/mman.h> header file. */
 #cmakedefine HAVE_SYS_MMAN_H @HAVE_SYS_MMAN_H@
 
-/* Define to 1 if you have the <sys/socket.h> header file. */
-#cmakedefine HAVE_SYS_SOCKET_H @HAVE_SYS_SOCKET_H@
-
 /* Define to 1 if you have the <sys/soundcard.h> header file. */
 #cmakedefine HAVE_SYS_SOUNDCARD_H @HAVE_SYS_SOUNDCARD_H@
 
@@ -106,23 +94,11 @@
 /* Define to 1 if you have the <getopt.h> header file. */
 #cmakedefine HAVE_GETOPT_H @HAVE_GETOPT_H@
 
-/* Define to 1 if you have the inet_ntop() function. */
-#cmakedefine HAVE_INETNTOP @HAVE_INETNTOP@
-
-/* Define to enable IPV6 support */
-#cmakedefine IPV6_SUPPORT @IPV6_SUPPORT@
-
-/* Define to enable network support */
-#cmakedefine NETWORK_SUPPORT @NETWORK_SUPPORT@
-
 /* Define if using the MinGW32 environment */
 #cmakedefine MINGW32 @MINGW32@
 
 /* Define to 1 if your C compiler doesn't accept -c and -o together. */
 #cmakedefine NO_MINUS_C_MINUS_O @NO_MINUS_C_MINUS_O@
-
-/* Define to enable OSS driver */
-#cmakedefine OSS_SUPPORT @OSS_SUPPORT@
 
 /* Name of package */
 #cmakedefine PACKAGE "@PACKAGE@"
