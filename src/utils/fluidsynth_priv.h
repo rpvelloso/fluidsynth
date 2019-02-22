@@ -22,7 +22,8 @@
 #ifndef _FLUIDSYNTH_PRIV_H
 #define _FLUIDSYNTH_PRIV_H
 
-#include <glib.h>
+//#include <glib.h>
+#include "fluid_glib_remover.h"
 
 #include "config.h"
 

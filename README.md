@@ -7,11 +7,10 @@ Removed:
 	- bindings;
 	- command line program;
 	- tests;
-	- documentation.
+	- documentation;
+	- Glib dependency (header fluid_glib_remover.h).
 
 Kept:
 	- synth;
 	- player;
 	- SF loader.
-
-TODO: remove libglib dependency
