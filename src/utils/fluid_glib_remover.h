@@ -150,8 +150,6 @@ g_cond_new() {
 #define g_atomic_pointer_set g_atomic_int_set
 #define g_atomic_pointer_compare_and_exchange g_atomic_int_compare_and_exchange
 
-#define g_thread_self() pthread_self()
-
 static inline gpointer
 g_thread_join(GThread *t) {
 	if (t != NULL) {
