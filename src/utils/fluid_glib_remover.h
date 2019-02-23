@@ -13,6 +13,8 @@
 #include <pthread.h>
 #include <stdint.h>
 
+#define TRUE 1
+#define FALSE 0
 #define G_LITTLE_ENDIAN 1234
 #define G_BIG_ENDIAN    4321
 #define G_BYTE_ORDER G_LITTLE_ENDIAN

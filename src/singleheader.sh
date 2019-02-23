@@ -85,38 +85,40 @@ sources=(
 	'./utils/fluid_sys.c'
 )
 
-rm -rf fs.h fs.c
+HEADER=fs.h
+SOURCE=fs.c
+rm -rf $HEADER $SOURCE
 
-echo '#define HAVE_STDINT_H 1' >> fs.c
-echo '#define FLUIDSYNTH_NOT_A_DLL' >> fs.c
-echo '#define SUPPORTS_VLA' >> fs.c
+echo '#define HAVE_STDINT_H 1' >> $SOURCE
+echo '#define FLUIDSYNTH_NOT_A_DLL' >> $SOURCE
+echo '#define SUPPORTS_VLA' >> $SOURCE
 
 
 i=0
 while [ "${ifheaders[i]}" != "" ]
 do
-   cat ${ifheaders[i]}|egrep -v '#include \"' >> fs.c
-   cat ${ifheaders[i]}|egrep -v '#include \"' >> fs.h
+   cat ${ifheaders[i]}|egrep -v '#include \"' >> $SOURCE
+   cat ${ifheaders[i]}|egrep -v '#include \"' >> $HEADER
    i=$(( $i + 1 ))
 done
 
 i=0
 while [ "${headers[i]}" != "" ]
 do
-   cat ${headers[i]}|egrep '(#include <)'|egrep -v '(#include <glib.h>|#include <sys/mman.h>|#include <sys/socket.h>|#include <netinet/in.h>|#include <netinet/tcp.h>|#include <arpa/inet.h>|#include <gmodule.h>|#include <glib/gstdio.h>|#include <os2.h>|#include <sys/select.h>)' >> fs.c
+   cat ${headers[i]}|egrep '(#include <)'|egrep -v '(#include <io.h>|#include <winsock2.h>|#include <ws2tcpip.h>|#include <glib.h>|#include <sys/mman.h>|#include <sys/socket.h>|#include <netinet/in.h>|#include <netinet/tcp.h>|#include <arpa/inet.h>|#include <gmodule.h>|#include <glib/gstdio.h>|#include <os2.h>|#include <sys/select.h>)' >> $SOURCE
    i=$(( $i + 1 ))
 done
 
 i=0
 while [ "${headers[i]}" != "" ]
 do
-   cat ${headers[i]}|egrep -v '#include \"' >> fs.c
+   cat ${headers[i]}|egrep -v '#include \"' >> $SOURCE
    i=$(( $i + 1 ))
 done
 
 i=0
 while [ "${sources[i]}" != "" ]
 do
-   cat ${sources[i]}|egrep -v '#include "' >> fs.c
+   cat ${sources[i]}|egrep -v '#include "' >> $SOURCE
    i=$(( $i + 1 ))
 done

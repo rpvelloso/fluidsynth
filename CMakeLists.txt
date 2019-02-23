@@ -405,7 +405,7 @@ else(NOT enable-pkgconfig)
     find_package ( PkgConfig REQUIRED )
 
     # Mandatory libraries: glib and gthread
-    pkg_check_modules ( GLIB REQUIRED glib-2.0>=2.6.5 gthread-2.0>=2.6.5 )
+    # pkg_check_modules ( GLIB REQUIRED glib-2.0>=2.6.5 gthread-2.0>=2.6.5 )
 
     include ( UnsetPkgConfig )
 
