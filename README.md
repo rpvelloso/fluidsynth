@@ -93,7 +93,7 @@ int main() {
 	void *inputBuffer; // midi file loaded in memory
 	size_t inputBufferSize;
 
-	loadMidiFile(FILENAME, &inputBuffer, &inputBufferSize); // not implemented/shown here
+	loadMidiFile(FILENAME, &inputBuffer, &inputBufferSize);
 
 	if (settings != NULL && buf != NULL && inputBuffer != NULL && fluid_is_soundfont(SF_FILE)) {
 		fluid_synth_t *synth = new_fluid_synth(settings);
