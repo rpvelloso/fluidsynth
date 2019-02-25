@@ -114,7 +114,6 @@ int main() {
 		fwrite(&waveHeader, sizeof(waveHeader), 1, out);
 		
 		while (fluid_player_get_status(player) != FLUID_PLAYER_DONE) {
-			memset(buf, 0, BUF_LEN);
 			fluid_synth_write_s16(
 				synth,
 				BUF_LEN >> 2, // 16 bit Stereo
