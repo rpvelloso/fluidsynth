@@ -19,8 +19,8 @@ Only synth and sound font functionality were kept.
 	
 ## The single header library:
 
-	- header fs.h: https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.h
-	- source fs.c: https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.c
+	- header: [fs.h](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.h)
+	- source: [fs.c](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.c)
 	
 ## Usage:
 
