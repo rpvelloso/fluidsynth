@@ -86,15 +86,13 @@ typedef struct WaveHeader {
 } WaveHeader;
 
 int main() {
-	fluid_settings_t * settings = new_fluid_settings();
-	void *buf = malloc(BUF_LEN);
-
 	void *inputBuffer; // midi file loaded in memory
 	size_t inputBufferSize;
 
 	loadMidiFile(FILENAME, &inputBuffer, &inputBufferSize);
 
-	if (settings != NULL && buf != NULL && inputBuffer != NULL && fluid_is_soundfont(SF_FILE)) {
+	if (inputBuffer != NULL && fluid_is_soundfont(SF_FILE)) {
+		fluid_settings_t *settings = new_fluid_settings();
 		fluid_synth_t *synth = new_fluid_synth(settings);
 		fluid_player_t *player = new_fluid_player(synth);
 		fluid_synth_sfload(synth, SF_FILE, 1);
@@ -112,6 +110,8 @@ int main() {
 		FILE *out = fopen(OUTFILE, "wb");
 		fwrite(&waveHeader, sizeof(waveHeader), 1, out);
 		
+		void *buf = malloc(BUF_LEN);
+		
 		while (fluid_player_get_status(player) != FLUID_PLAYER_DONE) {
 			fluid_synth_write_s16(
 				synth,
@@ -121,9 +121,19 @@ int main() {
 			fwrite(buf, BUF_LEN, 1, out);
 			waveHeader.dataSize += BUF_LEN;
 		}
+		
+		free(buf);
+		
+		delete_fluid_player(player);
+		delete_fluid_synth(synth);
+		delete_fluid_settings(settings);
+		
+		free(inputBuffer);
+		
 		rewind(out);
 		waveHeader.chunkSize = waveHeader.dataSize + 36;
 		fwrite(&waveHeader, sizeof(waveHeader), 1, out);
+		fclose(out);
 	}
 }
 ```
