@@ -45,7 +45,6 @@ run:
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <string.h>
 #include "fs.h"
 
 #define SF_FILE "mysoundfont.sf2"
