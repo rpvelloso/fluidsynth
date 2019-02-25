@@ -4,28 +4,30 @@
 Only synth and sound font functionality were kept.
 
 ## What was removed:
-	- networking;
-	- audio drivers;
-	- bindings;
-	- command line program;
-	- tests;
-	- documentation;
-	- Glib dependency (header fluid_glib_remover.h).
+
+- networking;
+- audio drivers;
+- bindings;
+- command line program;
+- tests;
+- documentation;
+- Glib dependency (header fluid_glib_remover.h).
 
 ## What was kept:
-	- synth;
-	- player;
-	- SF loader.
+- synth;
+- player;
+- SF loader.
 	
 ## The single header library:
 
-	- header: [fs.h](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.h)
-	- source: [fs.c](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.c)
+- header: [fs.h](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.h);
+- source: [fs.c](https://github.com/rpvelloso/fluidsynth/blob/master/src/fs.c).
 	
 ## Usage:
 
-	- Compile the source C file fs.c (e.g., gcc -c fs.c -o fs.o) and;
-	- Include the header fs.h in your code.
+- Compile the source C file fs.c (e.g., gcc -c fs.c -o fs.o) and;
+- Include the header fs.h in your code;
+- Link your software with fs.o.
 	
 ## Example (converts MIDI to 16 bit stereo PCM):
 
