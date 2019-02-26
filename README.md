@@ -47,8 +47,14 @@ run:
 #include <stdint.h>
 #include "fs.h"
 
+#define SAMPLE_RATE 44100
+#define CHANNELS 2
+#define BITS_PER_SAMPLE 16
+#define BYTES_PER_SAMPLE (BITS_PER_SAMPLE>>3)
+#define FRAME_SIZE (BYTES_PER_SAMPLE*CHANNELS)
+
 #define SF_FILE "mysoundfont.sf2"
-#define BUF_LEN (2 * 2 * 4 * 1024) // (chans * res * size * kb) = 4k frames 16bits stereo
+#define BUF_LEN (FRAME_SIZE * 4 * 1024) // 4k frames
 #define FILENAME "mymidifile.mid"
 #define OUTFILE "output.wav"
 
@@ -104,7 +110,12 @@ int main() {
 			0, 
 			{'W', 'A', 'V', 'E'}, 
 			{'f', 'm', 't', ' '}, 
-			0x10, 1, 2, 44100, 2*2*44100, 2*2, 16, 
+			0x10, 1, 
+			CHANNELS, 
+			SAMPLE_RATE, 
+			FRAME_SIZE*SAMPLE_RATE, 
+			FRAME_SIZE, 
+			BITS_PER_SAMPLE, 
 			{'d', 'a', 't', 'a'}, 0};
 
 		FILE *out = fopen(OUTFILE, "wb");
