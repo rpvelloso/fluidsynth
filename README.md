@@ -127,8 +127,8 @@ int main() {
 			fluid_synth_write_s16(
 				synth,
 				BUF_LEN / FRAME_SIZE,
-				buf, 0, 2,
-				buf, 1, 2);
+				buf, 0, BYTES_PER_SAMPLE,
+				buf, 1, BYTES_PER_SAMPLE);
 			fwrite(buf, BUF_LEN, 1, out);
 			waveHeader.dataSize += BUF_LEN;
 		}
